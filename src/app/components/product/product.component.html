@@ -1,0 +1,32 @@
+ <!-- Ex. 1  using the optional chaining-->
+<!-- <h2>{{ product?.title }}</h2>
+<p>$ {{ product?.price }}</p>
+<img src={{product?.images[0] }} alt=""> -->
+
+
+ <!-- Ex. 2 -->
+<!-- <div *ngIf="product">
+    <h2>{{ product.title }}</h2>
+    <p>$ {{ product.price }}</p>
+    <img [src]="product.images[0]" alt="">
+</div>
+<div *ngInf="!product">
+    product not found!
+</div> -->
+
+ 
+<!-- Refactor -->
+<ng-container *ngIf="product">
+    <h2>{{ product.title }}</h2> 
+    <p>$ {{ product.price }}</p>
+    <img [ngSrc]="product.images[0]" width="640" height="640" alt="">
+</ng-container>
+<ng-container *ngIf="!product">
+    product not found!
+</ng-container>
+
+
+
+
+
+
